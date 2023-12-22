@@ -4,6 +4,8 @@ import './globals.css'
 
 import Layout from '@/components/Layout'
 
+import { AuthProvider } from '@/providers/AuthProvider'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -19,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+          <AuthProvider>
           <Layout>
             {children}
           </Layout>
+          </AuthProvider>
         </body>
     </html>
   )
